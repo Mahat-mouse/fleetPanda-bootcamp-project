@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html>
-   <head>
+  <head>
     <title>fleetpanda</title>
-    <link rel="stylesheet" href="./style.css">
-   </head>
-   <body>
-    <div class="topnav" >
-        <img src="fleetpandalogo.png" width='70' height="70" >
-        <h1>Welcome to FleetPanda!!</h1>
-        <div id="navlist">
-            <a href="#"> Home</a>
-            <a href="#">Services</a>
-            <a href="#">Careers</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-        </div>
-        <div class = "search"> 
-            <form action="#">
-                <input type="text" placeholder="Search..." name="Search">
-            </form>
-        </div>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel=""
+  </head>
+  <body>
+    <div class="topnav">
+      <img src="Fleetpanda-White-Logo.svg" width="200" height="170" />
+      <div id="navlist">
+        <a href="#"> Home</a>
+        <a href="#">Services</a>
+        <a href="#">Careers</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="./loginin.html">Login</a>
+        <a href="./signupform.html">SignUp</a>
+      </div>
+      <div class="search">
+        <form action="#">
+          <input type="text" placeholder="Search..." name="Search" />
+        </form>
+      </div>
     </div>
-   </body>
+    <div class="home">
+      <div class="para">
+        <p>
+          <b>Empowering Innovation, <br />Delivering Excellence.</b>
+        </p>
+      </div>
+    </div>
+    <div class="login-body">
+        <h1>FleetPanda</h1>
+        <br>
+  
+        <h3>Enter your credentials below.</h3>
+        <br>
+        <br>
+        
+        <form action="#">
+          <label><b> Username:</b></label>
+          <input
+            type="text"
+            id="1"
+            name="yourname"
+            placeholder="Enter your username here."
+          />
+          <label><b> Password:</b></label>
+          <input
+            type="password"
+            id="2"
+            name="password"
+            placeholder="Enter your pasword here."
+          />
+          <div class="wrap">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+        <br>
+        <p>
+          Not registered?
+          <a href="./signupform.html" style="text-decoration: none"> Create an account </a>
+        </p>
+      </div>
+  </body>
 </html>

@@ -3,8 +3,11 @@ body {
   color: aliceblue;
 
   background-color: black;
+  overflow-x: hidden;
 }
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 input[type="text"],
@@ -31,34 +34,41 @@ button:hover {
 }
 
 .modal-content {
-  padding-top: 50px;
+  padding-top: 20px;
+  margin: auto;
+  
 }
-.Close {
-  position: absolute;
+.close {
+  
   right: 30px;
   top: 20px;
-  font-size: 60px;
+  font-size: 30px;
   font-weight: bold;
   color: rgb(246, 245, 244);
+  position: absolute;
+  top: 14px;
+  right: 30px;
 }
-.Close:hover,
+.close:hover,
 .close:focus {
   color: rgb(133, 15, 15);
   cursor: pointer;
 }
-.modal-content {
-  margin: 5% 20% 5% 20%;
+.radiobtn{ display: flex;
+  
 }
+#rd1{ margin-left: 20px; margin-right: 10px;}
+#rd2{ margin-left: 20px; margin-right: 10px;}
 .topnav {
-  background-color: rgba(220, 17, 17, 0.921);
+  background-color: rgba(196, 14, 14, 0.552);
   height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.topnav .search input[type='text']{
-  width: 160%;
+.topnav .search input[type="text"] {
+  width: 140%;
 }
 
 .topnav a {
@@ -67,10 +77,11 @@ button:hover {
   color: aliceblue;
   text-align: center;
   padding: 14px 16px;
-  font-size: 15px;
+  font-size: 20px;
+  text-decoration: none;
 }
 .topnav a:hover {
-  background-color: rgb(117, 17, 17);
+  background-color: rgba(11, 6, 2, 0.467);
   color: aliceblue;
 }
 .topnav img {
@@ -83,7 +94,75 @@ button:hover {
   float: right;
   padding: 6px;
   border: none;
+  border-radius: 3px;
   margin-top: 8px;
   margin-right: 16px;
   font-size: 15px;
+}
+
+.login-body {
+  padding: 20px;
+  box-shadow: rgba(227, 91, 91, 0.25) 0px 54px 55px,
+    rgba(204, 20, 20, 0.12) 0px -12px 30px, rgba(188, 5, 5, 0.12) 0px 4px 6px,
+    rgba(201, 10, 10, 0.17) 0px 12px 13px, rgba(206, 8, 8, 0.09) 0px -3px 5px;
+  width: 30%;
+  margin-top: 200px;
+  margin-left: 500px;
+  justify-content: center;
+  
+}
+.modal {
+  padding: 20px;
+  width: 30%;
+  box-shadow: rgba(241, 3, 3, 0.25) 0px 54px 55px,
+    rgba(204, 20, 20, 0.12) 0px -12px 30px, rgba(188, 5, 5, 0.12) 0px 4px 6px,
+    rgba(201, 10, 10, 0.17) 0px 12px 13px, rgba(206, 8, 8, 0.09) 0px -3px 5px;
+  margin-top: 50px;
+  margin-left: 500px;
+  position:relative;
+}
+
+.home {
+  background: url("bg.webp");
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  opacity: 0.8;
+}
+.para {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bolder;
+  font-size: 50px;
+  position: relative;
+  animation: myfirstanm;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+@keyframes myfirstanm {
+  0% {
+    color: rgb(247, 250, 252);
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    color: rgb(244, 239, 239);
+    top: 0px;
+    left: 200px;
+  }
+  50% {
+    color: rgb(248, 250, 248);
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    color: rgb(248, 249, 247);
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    color: rgb(250, 250, 250);
+    left: 0px;
+    top: 0px;
+  }
 }
