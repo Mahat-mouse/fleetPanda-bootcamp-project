@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SignUP Form</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="1" class="modal">
+      <span
+        onclick="document.getElementById('1').style.display='none'"
+        class="Close"
+      >
+        &times;</span
+      >
+      <form class="modal-content" onsubmit="return validateForm(event);">
+        <h1>Sign Up</h1>
+        <p>Please fill this form to record your details.</p>
+        <hr />
+        <label> <b> Name</b></label
+        ><br />
+        <input
+          type="text"
+          id="fname"
+          placeholder="Enter your full name here."
+        />
+        <label> <b> Contact No</b></label
+        ><br />
+        <input
+          type="text"
+          id="contactNo"
+          placeholder="Enter your personal number here."
+        />
+        <label><b>Address</b></label
+        ><br />
+        <input
+          type="text"
+          id="address"
+          placeholder="Enter your current address here."
+        />
+        <label><b> Email</b></label
+        ><br />
+        <input
+          type="text"
+          id="email"
+          placeholder="Enter your email address here."
+        /><br />
+        <label><b> Gender</b></label> <br />
+        <label> <b>Male</b></label
+        ><input type="radio" name="gender" /> <label><b> Female</b></label
+        ><input type="radio" name="gender" />
+        <br />
+        <br />
+
+        <p>Click submit button below to record your details.</p>
+        <br />
+        <br />
+
+        <button type="submit" class="Submitbutton" value="Submit">
+          Submit
+        </button>
+        <div class="clear">
+          <button
+            type="button"
+            onclick="document.getElementById(1).style.display='none' "
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+
+    <script src="./script.js"></script>
+    </body>
+</html>

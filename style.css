@@ -1,0 +1,89 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  color: aliceblue;
+
+  background-color: black;
+}
+* {
+  box-sizing: border-box;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 20px;
+  margin: 5px 0 20px 0;
+  display: inline-block;
+  background-color: rgb(245, 241, 244);
+}
+button {
+  background-color: rgb(246, 240, 243);
+  color: rgb(9, 9, 9);
+  padding: 15px 25px;
+  margin: 2px 0;
+
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+button:hover {
+  opacity: 1;
+}
+
+.modal-content {
+  padding-top: 50px;
+}
+.Close {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  color: rgb(246, 245, 244);
+}
+.Close:hover,
+.close:focus {
+  color: rgb(133, 15, 15);
+  cursor: pointer;
+}
+.modal-content {
+  margin: 5% 20% 5% 20%;
+}
+.topnav {
+  background-color: rgba(220, 17, 17, 0.921);
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topnav .search input[type='text']{
+  width: 160%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: aliceblue;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 15px;
+}
+.topnav a:hover {
+  background-color: rgb(117, 17, 17);
+  color: aliceblue;
+}
+.topnav img {
+  float: inline-start;
+}
+.topnav.search {
+  float: right;
+}
+.topnav input[type="text"] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 15px;
+}
