@@ -1,80 +1,64 @@
-document.addEventListener("DOMContentLoaded", function() {
-  var loginSubmitBtn = document.getElementById('loginSubmitBtn');
+import { handleRequest } from "./request.js";
 
-  loginSubmitBtn.addEventListener("click", function(e){
-    validateLoginForm(e)
-  })
-})
+document.addEventListener("DOMContentLoaded", function () {
+  var loginSubmitBtn = document.getElementById("loginSubmitBtn");
+
+  loginSubmitBtn.addEventListener("click", function (e) {
+    validateLoginForm(e);
+  });
+});
 
 async function validateLoginForm(event) {
-  // alert(event);
   event.preventDefault();
+  const emailError = document.getElementById("email-error");
+  const passwordError = document.getElementById("password-error");
 
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
-  // console.log(useremail, userpass);
 
-  const emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   let data = { email, password };
+  let errorExists = false;
 
-  let errors = {};
+  // Clear previous error messages
+  emailError.innerText = "";
+  passwordError.innerText = "";
 
+  // Validate email
   if (!email) {
-    errors['email'] = "Enter the email address.";
-  } else if (!emailpattern.test(email)) {
-    errors['email'] = "Please enter valid email.";
+    emailError.innerText = "Please provide an email";
+    errorExists = true;
+  } else if (!emailPattern.test(email)) {
+    emailError.innerText = "Please provide a valid email address";
+    errorExists = true;
   }
 
+  // Validate password
   if (!password) {
-    errors['password'] = "Enter your password.";
+    passwordError.innerText = "Please provide your password";
+    errorExists = true;
   }
 
-  // document.getElementById("email").placeholder = "";
-  // document.getElementById("password").placeholder = "";
+  // Reset form only if no errors
+  if (!errorExists) {
+    try {
+      let response = await handleRequest(
+        "https://reqres.in/api/login",
+        "POST",
+        data
+      );
+      console.log(response)
+      if(!response.success){
+        alert("User not found !")
+      }else {
 
-  debugger;
-  if (Object.keys(errors).length > 0) {
-    if (errors.email) {
-      document.getElementById("email").value = "";
-      document.getElementById("email").placeholder = errors.email;
+        localStorage.setItem("loginToken", response.userToken);
+        console.log(localStorage.getItem("loginToken"));
+        window.location.href = "../index.html";
+      }
+    } catch (error) {
+      console.log(error.message);
     }
-
-    if (errors.password) {
-      document.getElementById("password").value = "";
-      document.getElementById("password").placeholder = errors.password;
-    }
-  } else {
-    // alert(
-    //   JSON.stringify({
-    //     emailid: useremail,
-    //     passwordfield: userpass,
-    //   })
-    // );
-    document.querySelector("form.loginform").reset();
-
-  //FOR API
-  try {
-    let response = await fetch("https://reqres.in/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data)
-    });
-    debugger;
-
-    if(response.status !== 200){
-      alert("unsuccessful login attempt")
-
-      throw new Error("Login failed");
-    }
-    let loginData = await response.json();
-    console.log(loginData.token);
-    localStorage.setItem("loginToken", loginData.token);
-    window.location.href = "../index.html";
-  } catch (error) {
-    debugger
-    throw error;
   }
-}}
+}
