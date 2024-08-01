@@ -2,20 +2,17 @@
 <html>
   <head>
     <title>SignUP Form</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <div id="1" class="modal">
-      <span
-        onclick="document.getElementById('1').style.display='none'"
-        class="Close"
-      >
-        &times;</span
-      >
-      <form class="modal-content" onsubmit="return validateForm(event);">
+      
+      
+      <form class="modal-content" onsubmit="return validateSignupForm(event);">
         <h1>Sign Up</h1>
+        <br />
         <p>Please fill this form to record your details.</p>
-        <hr />
+        <br />
         <label> <b> Name</b></label
         ><br />
         <input
@@ -43,20 +40,28 @@
           type="text"
           id="email"
           placeholder="Enter your email address here."
-        /><br />
-        <label><b> Gender</b></label> <br />
-        <label> <b>Male</b></label
-        ><input type="radio" name="gender" /> <label><b> Female</b></label
-        ><input type="radio" name="gender" />
+        /><br /><br>
+        <div class="radiobtn">
+          <label><b> Gender</b></label>
+          <div class="radiobtn" id="rd1">
+
+          <label><b>Male</b></label
+          ><input type="radio" name="gender" /> 
+          </div>
+          <div class="radiobtn" id="rd2">
+          <label><b> Female</b></label>
+          <input type="radio" name="gender" />
+          </div>
+        </div>
+
         <br />
         <br />
 
-        <p>Click submit button below to record your details.</p>
-        <br />
+        <p>Click below to record your details.</p>
         <br />
 
         <button type="submit" class="Submitbutton" value="Submit">
-          Submit
+          Register
         </button>
         <div class="clear">
           <button
@@ -66,10 +71,13 @@
             Cancel
           </button>
         </div>
+
       </form>
+      <span
+        onclick="document.getElementById('1').style.display='none'"
+        class="close">&times;</span>
     </div>
 
-
-    <script src="./script.js"></script>
-    </body>
+    <script src="../script.js"></script>
+  </body>
 </html>
